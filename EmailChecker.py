@@ -8,9 +8,9 @@ def is_valid_email(email):
     # @                     : The '@' symbol
     # [A-Za-z0-9.-]+        : One or more characters that can be uppercase letters, lowercase letters, digits, dots, or hyphens
     # \.                    : A literal dot
-    # [A-Z|a-z]{2,}         : Two or more characters that can be uppercase or lowercase letters
+    # [A-Z|a-z]{2,}         : Two or more {2,} characters that can be uppercase or lowercase letters [A-Z|a-z]
     # $                     : End of the string
-    
+
     if re.match(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$", email):
         return True
     else:
