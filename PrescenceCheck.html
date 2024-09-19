@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presence Check</title>
+    <script>
+        // Function to check user input and display a message
+        function checkInput() {
+            const userInput = document.getElementById('userInput').value;
+            const message = document.getElementById('message');
+            
+            // Check if input is empty and display appropriate message
+            if (userInput.trim() === "") {
+                message.textContent = "Please enter a value.";
+            } else {
+                message.textContent = `Welcome, ${userInput}!`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Presence Check</h1>
+    <!-- Input field for user to enter their name -->
+    <input type="text" id="userInput" placeholder="Enter your name">
+    <!-- Button to trigger the checkInput function -->
+    <button onclick="checkInput()">Submit</button>
+    <!-- Paragraph to display the message -->
+    <p id="message"></p>
+</body>
+</html>
