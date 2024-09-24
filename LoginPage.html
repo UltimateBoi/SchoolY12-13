@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        const userData = {
+            userID: "saml",
+            pin: "1234",
+            password: "pass123"
+        };
+
+        let userAttempts = 0;
+        let pinAttempts = 0;
+        let passwordAttempts = 0;
+
+        function checkInput() {
+            const userInput = document.getElementById('userInput').value;
+            const pinInput = document.getElementById('pinInput').value;
+            const passwordInput = document.getElementById('passwordInput').value;
+            const message = document.getElementById('message');
+
+            if (userAttempts >= 3) {
+                message.textContent = "Incorrect ID – access denied";
+                return;
+            }
+
+            if (pinAttempts >= 1) {
+                message.textContent = "Incorrect PIN – access denied";
+                return;
+            }
+
+            if (passwordAttempts >= 3) {
+                message.textContent = "Incorrect password – access denied";
+                return;
+            }
+
+            if (userInput !== userData.userID) {
+                userAttempts++;
+                message.textContent = "Incorrect ID – try again";
+                return;
+            }
+
+            if (pinInput !== userData.pin) {
+                pinAttempts++;
+                message.textContent = "Incorrect PIN – try again";
+                return;
+            }
+
+            if (!checkPassword(passwordInput, userData.password)) {
+                passwordAttempts++;
+                message.textContent = "Incorrect password – try again";
+                return;
+            }
+
+            message.textContent = `Welcome, ${userInput}!`;
+        }
+
+        function checkPassword(input, actualPassword) {
+            if (input.length !== 3) return false;
+
+            const indices = [0, 1, 2]; // Example indices, you can randomize this
+            for (let i = 0; i < indices.length; i++) {
+                if (input[i] !== actualPassword[indices[i]]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <label for="userInput">User ID:</label>
+    <input type="text" id="userInput" maxlength="10"><br>
+    <label for="pinInput">PIN:</label>
+    <input type="text" id="pinInput" maxlength="4"><br>
+    <label for="passwordInput">Password (3 characters):</label>
+    <input type="text" id="passwordInput" maxlength="3"><br>
+    <button onclick="checkInput()">Login</button>
+    <p id="message"></p>
+</body>
+</html>
