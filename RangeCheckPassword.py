@@ -14,3 +14,11 @@ def is_strong_password(password):
         return False
     
     return True
+
+while True:
+    password = input("Enter a password: ")
+    if is_strong_password(password):
+        print("Password is strong.")
+        break
+    else:
+        print("Password is not strong enough. Please try again.")
