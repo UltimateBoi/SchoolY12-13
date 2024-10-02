@@ -21,7 +21,7 @@ class Dog:
   def woof(self, times):
     print("Woof! " * times)
 
-# Instantiate a new instance of a dog
+# Initialize a new instance of a dog
 dog_name = input("What is your dog's name? ")
 dog_colour = input("What is the colour of your dog? ")
 doggo = Dog(dog_name, dog_colour)
