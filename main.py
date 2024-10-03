@@ -32,5 +32,11 @@ doggo.dog_info()
 # Make the dog woof 10 times
 doggo.woof(10)
 
-# Output the memory location of the Dog object
+# Output the memory location of each object within the Dog class
 print(f"The memory location of the Dog object is: {hex(id(doggo))}")
+print(f"The memory location of the Dog get_name object is: {hex(id(doggo.get_name))}")
+print(f"The memory location of the Dog set_name object is: {hex(id(doggo.set_name))}")
+print(f"The memory location of the Dog colour object is: {hex(id(doggo.get_colour))}")
+print(f"The memory location of the Dog set_colour object is: {hex(id(doggo.set_colour))}")
+print(f"The memory location of the Dog info object is: {hex(id(doggo.dog_info))}")
+print(f"The memory location of the Dog woof object is: {hex(id(doggo.woof))}")
