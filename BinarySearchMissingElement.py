@@ -1,26 +1,27 @@
 def binary_search(arr, target):
+    # Perform a binary search to find the target in a sorted array.
+    
+    # Check if the array is empty
+    if not arr:
+        return "The array is empty"  # Return message if array is empty
+    
     # Initialize the left and right pointers
-    left, right = 0, len(arr) - 1
+    left, right = 0, len(arr) - 1  # Set initial pointers
     
     # Loop until the pointers cross
     while left <= right:
-        # Calculate the middle index
-        mid = (left + right) // 2
+        mid = (left + right) // 2  # Calculate the middle index
         
-        # Check if the middle element is the target
         if arr[mid] == target:
-            return f"Number {target} found at index {mid}"
+            return f"Number {target} found at index {mid}"  # Target found
         
-        # If the target is greater, ignore the left half
         elif arr[mid] < target:
-            left = mid + 1
+            left = mid + 1  # Ignore the left half
         
-        # If the target is smaller, ignore the right half
         else:
-            right = mid - 1
+            right = mid - 1  # Ignore the right half
     
-    # Return a message if the target is not found
-    return f"Number {target} not found in the array"
+    return f"Number {target} not found in the array"  # Target not found
 
 # Sorted array to search in
 arr = [10, 20, 30, 40, 50]

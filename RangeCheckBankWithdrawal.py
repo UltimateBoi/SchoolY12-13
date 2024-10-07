@@ -9,4 +9,6 @@ def withdraw(amount, balance):
     
     # If both checks pass, perform the withdrawal
     balance -= amount
-    return f"Success: You have withdrawn ${amount:.2f}. Your new balance is ${balance:.2f}."
+    
+    # Return success message and the updated balance
+    return f"Success: You have withdrawn ${amount:.2f}. Your new balance is ${balance:.2f}.", balance
