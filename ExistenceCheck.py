@@ -39,7 +39,8 @@ def main():
             print(f"Username '{username}' is not available.")
     
     save_usernames(filename, existing_usernames)
-    print("Final list of usernames:", existing_usernames + "\nList has been saved to:", filename)
+    print("Final list of usernames:", existing_usernames)
+    print("List has been saved to:", filename)
 
 if __name__ == "__main__":
     main()
