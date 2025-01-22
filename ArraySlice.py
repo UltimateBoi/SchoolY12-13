@@ -37,3 +37,8 @@ totals = quarterSales(Outlet1Sales, Outlet2Sales, Outlet3Sales)
 
 for i in range(4):
     print(f"Total for quarter {i+1} {totals[i]}")
+
+# Write a program to read 6 numbers into an array numbers[0] to numbers[5], ouput them in reverse order and then output the total and average.
+
+def reverseArr(arr):
+    return arr[::-1] # Reversing the array using slicing
