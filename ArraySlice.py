@@ -2,6 +2,10 @@ numbers = [1,2,3,4,5,6]
 numbers = numbers[::-1]
 for i in range(len(numbers)):
     print(numbers[i],end="")
+total = sum(numbers)
+average = total / len(numbers)
+print(f"\nTotal: {total}")
+print(f"Average: {average:.2f}")
 
 def search_name(names, target_name):
     for index in range(len(names)):
