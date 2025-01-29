@@ -37,7 +37,7 @@ for i in range(4):
 print("")
 
 # Initialize the 2D array for 50 outlets and 4 quarters
-outletSales = [[0 for _ in range(50)] for _ in range(4)]
+outletSales = [[0 for _ in range(50)] for _ in range(4)] # Use of _ to indicate that the variable is not used when creating the array using list comprehension
 
 # Populate the array with random sales data
 for quarter in range(4):

@@ -22,7 +22,7 @@ print("Element at row 3, column 3 in 2D array:", array_2d[2, 2])
 
 # 3D Array Example
 # Creating a 3D array with numpy
-array_3d = np.array([[[1, 2, 3], [4, 5, 6]], 
+array_3d = np.array([[[1, 2, 3], [4, 5, ar]], 
                      [[7, 8, 9], [10, 11, 12]]])
 array3d = [[[1, 2, 3], [4, 5, 6]], 
            [[7, 8, 9], [10, 11, 12]]]
