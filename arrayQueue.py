@@ -1,5 +1,6 @@
-busQueue = [0 for _ in range(5)] # 10 buses using list comprehension
-print(busQueue,end="\n\n")
+import os
+
+busQueue = [0 for _ in range(5)] # 5 buses using list comprehension
 
 front = 0 # points to the first item in the queue
 rear = -1 # points to the last item in the queue (-1 means the queue is empty)
@@ -18,71 +19,58 @@ def enqueue(bus):
 
 def dequeue():
     global front, currentSize
-    bus = busQueue[front] # get bus from queue
-    front += 1 # change front pointer to +1
-    currentSize -= 1 # decrement current size
-    return bus # return bus
+    if isEmpty():
+        print("Queue is empty. Cannot dequeue.")
+        return None
+    else:
+        bus = busQueue[front] # get bus from queue
+        front = (front + 1) % maxSize # wrap around if needed
+        currentSize -= 1 # decrement current size
+        return bus # return bus
 
 def isFull():
     global currentSize
     return currentSize == maxSize # check if queue is full
 
 def isEmpty():
-    global front, rear
-    # Check if front index is greater than rear index because front is always ahead of rear unless the queue is empty
-    return front > rear
+    global currentSize
+    return currentSize == 0 # check if queue is empty
 
 def printQueue():
-    global front, rear
-    for i in range(front, rear+1):
-        print(busQueue[i], end=" ")
-    print()
+    global front, rear, currentSize
+    if isEmpty():
+        print("Queue is empty.")
+    else:
+        index = front
+        for _ in range(currentSize):
+            print(busQueue[index], end=" ")
+            index = (index + 1) % maxSize
+        print()
 
-print("front rear:", front, rear)
-print("Is queue full?", isFull())
-print("Is queue empty?", isEmpty(),end="\n\n")
+def menu():
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\nPlease choose an option:\n")
+        print("1. Enqueue")
+        print("2. Dequeue")
+        print("3. Print Queue")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
 
-enqueue(1)
-enqueue(2)
+        if choice == '1':
+            bus = int(input("Enter bus number to enqueue: "))
+            enqueue(bus)
+        elif choice == '2':
+            bus = dequeue()
+            if bus is not None:
+                print(f"Dequeued bus: {bus}")
+        elif choice == '3':
+            print("Current Queue: ", end="")
+            printQueue()
+        elif choice == '4':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+        input("Press Enter to continue...")
 
-print((busQueue),end="\n\n")
-
-print("front rear:", front, rear,end="\n\n")
-print("Is queue full?", isFull())
-print("Is queue empty?", isEmpty(),end="\n\n")
-
-enqueue(3)
-enqueue(4)
-
-print(busQueue)
-print("front rear:", front, rear,end="\n\n")
-
-# test max size of queue
-
-enqueue(5)
-
-print(busQueue)
-print("front rear:", front, rear)
-print("Is queue full?", isFull(),end="\n\n")
-
-# test dequeue
-
-print("Dequeue:", dequeue())
-print(busQueue)
-print("front rear:", front, rear,end="\n\n")
-
-print("Dequeue:", dequeue())
-print(busQueue)
-print("front rear:", front, rear,end="\n\n")
-
-print("Current Queue:", end=" ")
-
-printQueue()
-
-# circular queue testing
-
-enqueue(6)
-enqueue(7)
-
-print(busQueue)
-print("front rear:", front, rear)
+menu()
