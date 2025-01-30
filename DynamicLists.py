@@ -46,3 +46,107 @@ def sortListAscending(lst):
 list5 = [50, 20, 40, 10, 30]
 sorted_list = sortListAscending(list5)
 print(f"Sorted list: {sorted_list}")
+
+# Write a function that takes a list as input and returns a new list with the elements sorted in ascending order.
+
+def sortListAscending(lst):
+    return sorted(lst)
+
+#  Write a function that takes a list as input and returns a new list with the elements reversed.
+
+def reverseList(lst):
+    return lst[::-1] # slicing
+
+# Write a function that takes a list and an element as input and appends the element to the end of the list.
+
+def appendElement(lst, element):
+    lst.append(element) # append() method adds an element to the end of the list
+    return lst
+
+# Write a function that takes a list, an index, and a new value as input and updates the element at the specified index in the list.
+
+def updateElementAtIndex(lst, index, new_value):
+    if 0 <= index < len(lst): # Check if the index is within the range of the list
+        lst[index] = new_value # Update the element at the specified index
+    return lst
+
+# Write a function that takes a list as input and returns the number of elements in the list.
+
+def countElements(lst):
+    return len(lst)
+
+# Write a function that takes a list, an index, and an element as input and inserts the element at the specified index in the list.
+
+def insertElementAtIndex(lst, index, element):
+    if 0 <= index < len(lst): # Check if the index is within the range of the list
+        lst.insert(index, element) # Insert the element at the specified
+    return lst
+
+# Write a function that takes a list and an element as input and returns True if the element is present in the list, otherwise False.
+
+def isElementPresent(lst, element):
+    return element in lst
+
+# Write a function that takes a 2D array as input and returns a list containing the average of elements in each column.
+
+def averageOfColumns(array_2d):
+    num_columns = len(array_2d[0]) # Get the number of columns in the 2D array
+    averages = [] # Initialize an empty list to store the averages
+    for i in range(num_columns):
+        column_sum = sum(row[i] for row in array_2d) # Calculate the sum of elements in the column
+        column_average = column_sum / len(array_2d) # Calculate the average of elements in the column
+        averages.append(column_average) # Append the average to the list
+    return averages
+
+# Write a function that takes a 2D array as input and returns the sum of all elements in the array.
+
+def sumOfElements(array_2d):
+    return sum(sum(row) for row in array_2d) # list comprehension to calculate the sum of all elements in the 2D array
+
+# Write a function that takes two 2D arrays as input and returns their matrix multiplication
+
+def matrixMultiplication(matrix1, matrix2):
+    result = [[0 for _ in range(len(matrix2[0]))] for _ in range(len(matrix1))] # Initialize the result matrix with zeros using list comprehension
+    for i in range(len(matrix1)):
+        for j in range(len(matrix2[0])):
+            for k in range(len(matrix2)):
+                result[i][j] += matrix1[i][k] * matrix2[k][j] # Perform matrix multiplication algorithm
+
+# Write a function that takes a 2D array as input and returns a list containing the average of elements in each row.
+
+def averageOfRows(array_2d):
+    averages = [sum(row) / len(row) for row in array_2d] # Calculate the average of elements in each row using list comprehension
+    return averages
+
+# Write a function that takes a 2D array as input and returns the maximum element present in the array.
+
+def maxElement(array_2d):
+    return max(max(row) for row in array_2d) # Calculate the maximum element present in the 2D array
+
+# Write a function that takes a 2D array as input and returns a list containing the sum of elements in each row.
+
+def sumOfRows(array_2d):
+    sums = [sum(row) for row in array_2d] # Calculate the sum of elements in each row using list comprehension
+    return sums
+
+# Write a function that takes a 2D array as input and returns the sum of elements on the main diagonal (top-left to bottom-right).
+
+def sumOfMainDiagonal(array_2d):
+    return sum(array_2d[i][i] for i in range(len(array_2d))) # Calculate the sum of elements on the
+
+# Write a function that takes a 2D array and an element as input and returns True if the element is present in the array, otherwise False.
+
+def isElementPresentIn2DArray(array_2d, element):
+    return any(element in row for row in array_2d) # Check if the element is present in any row of the 2D array
+
+# Write a function that takes a 2D array as input and returns a list containing the sum of elements in each column.
+
+def sumOfColumns(array_2d):
+    num_columns = len(array_2d[0]) # Get the number of columns in the 2D array
+    sums = [sum(row[i] for row in array_2d) for i in range(num_columns)] # Calculate the sum of elements in each column using list comprehension
+    return sums
+
+# Write a function that takes a 2D array as input and returns its transpose (rows become columns and vice versa).
+
+def transposeArray(array_2d):
+    return [[array_2d[j][i] for j in range(len(array_2d))] for i in range(len(array_2d[0]))] # Transpose the 2D array using list comprehension
