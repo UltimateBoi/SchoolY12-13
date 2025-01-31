@@ -62,7 +62,7 @@ def menu():
             enqueue(bus)
         elif choice == '2':
             bus = dequeue()
-            if bus is not None:
+            if bus is not None: # check if bus is dequeued
                 print(f"Dequeued bus: {bus}")
         elif choice == '3':
             print("Current Queue: ", end="")
