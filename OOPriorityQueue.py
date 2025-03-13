@@ -34,7 +34,7 @@ class LinkedList:
             print("Queue is full. Cannot enqueue.")
         else:
             newNode = Node(data)
-            if self.rear == -1: # queue is empty
+            if self.rear == -1: # queue is empty if rear is -1
                 self.front = newNode # front and rear point to the same node
                 self.rear = newNode # front and rear point to the same node
             else:
