@@ -12,8 +12,8 @@ class Bank:
 
     # constructor
     def __init__(self):
-        self.__accounts = []
-
+        elf.__accounts = []
+s
     def add_account(self, account, account_holder, balance):
         new_account = Account(account, account_holder, balance) # instance of Account class that is created and stored in the list of accounts
         self.__accounts.append(new_account) # append the new account to the list of accounts
