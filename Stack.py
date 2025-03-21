@@ -11,10 +11,10 @@ class Stack:
     def isEmpty(self):
         return len(self.items) == 0
 
-myString = input("Please enter a word or phrase to be tested: ").lower()
+input1 = input("Please enter a word or phrase to be tested: ").lower()
 
 
-list1 = list(myString)  # convert myString to a list of characters
+list1 = list(input1)  # convert myString to a list of characters
 numChars = len(list1)
 s = Stack()  # Assume Stack has push, pop and isEmpty methods
 
