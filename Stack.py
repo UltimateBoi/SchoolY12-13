@@ -16,7 +16,7 @@ input1 = input("Please enter a word or phrase to be tested: ").lower()
 
 list1 = list(input1)  # convert myString to a list of characters
 numChars = len(list1)
-s = Stack()  # Assume Stack has push, pop and isEmpty methods
+s = Stack()
 
 # Push each character onto the stack
 for i in range(numChars):
