@@ -1,4 +1,4 @@
-treeArray = [
+tree = [
     [ 1 ,"M", 2 ],
     [ 3 ,"H", 4 ],
     [ 5 ,"T", 6 ],
@@ -9,16 +9,15 @@ treeArray = [
 ]
 
 root = 0
-left = 1
+left = 0
 right = 2
 data = 1
 
-print(treeArray[root][left])
-
-class Node():
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
-
-print(hex(id(treeArray)))
+def traverseInOrder(p):
+    if tree[p][left] != -1:
+        traverseInOrder(tree[p][left])
+    print(tree[p][data])
+    if tree[p][right] != -1:
+        traverseInOrder(tree[p][right])
+        
+traverseInOrder(root)
